@@ -193,6 +193,20 @@ For specifying links, the `links` array MAY be used in the root, in `meta`, and 
 
 For specifying actions that can be performed, the `actions` array may be used. The `actions` property MAY exist in the root or in `resources`.
 
+#### Fields
+
+Within actions, fields will need to be specified, and this can be done with the `fields` property (OPTIONAL), which is an object. It SHOULD support all of the attributes allowed on HTML5 inputs.
+
+* name (REQUIRED)
+* type (REQUIRED)
+* value
+* label
+* required
+* placeholder
+* min
+* max
+* step
+
 
 
 

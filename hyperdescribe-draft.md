@@ -82,7 +82,7 @@ This HTML document could then be represented like this.
       "givenName": "Michael",
       "familyName": "Jordan"
     },
-    links: [{
+    "links": [{
       "rel": "s:stats",
       "href": "/players/jordan/michael/stats"
     }]
@@ -93,7 +93,7 @@ This HTML document could then be represented like this.
       "givenName": "Larry",
       "familyName": "Bird"
     },
-    links: [{
+    "links": [{
       "rel": "s:stats",
       "href": "/players/bird/larry/stats"
     }]
@@ -104,7 +104,7 @@ This HTML document could then be represented like this.
       "givenName": "Bill",
       "familyName": "Russell"
     },
-    links: [{
+    "links": [{
       "rel": "s:stats",
       "href": "/players/russell/bill/stats"
     }]

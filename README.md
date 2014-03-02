@@ -37,7 +37,7 @@ Say you have an API that serves HTML+RDFa but your client-side code understands 
 
 ## How does this make it simpler? And how does this educate?
 
-Building one hypermedia format and getting others for free would make things a lot simpler right off the bat. The big benefit is that developers could build their entire API in HTML, which brings with it many benefits as I have outlined in [my post on using HTML](http://smizell.com/weblog/2014/html-hypermedia-api-decoupled-ui.html).
+Building one hypermedia format and getting others for free would make things a lot simpler by itself. The big benefit is that developers could build their entire API in HTML, which brings with it many benefits as I have outlined in [my post on using HTML](http://smizell.com/weblog/2014/html-hypermedia-api-decoupled-ui.html).
 
 As far as helping to educate, developers mostly understand the hypermedia aspects of HTML. Ask a developer to remove the links for forms from their HTML pages, and they will see the lost benefits for not including hypermedia.
 

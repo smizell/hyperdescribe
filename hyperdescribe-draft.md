@@ -181,6 +181,10 @@ For specifyig meta data about the message, the `meta` property can be used (OPTI
 
 A resource is a thing that is being described in the message based on a particular vocabulary.
 
+#### Properties
+
+For specifying properties for the resource, the `properties` property can be used (OPTIONAL), which is an array. It MAY be an array of of any type, including another `resource`. This allows for nesting resources.
+
 ### Links
 
 For specifying links, the `links` array MAY be used in the root, in `meta`, and in `resource` objects. The `links` property is OPTIONAL in all of those locations.

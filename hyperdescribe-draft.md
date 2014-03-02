@@ -163,7 +163,7 @@ From this standard format, we can then convert to other hypermedia formats.
 
 ## Prefixes
 
-For specifying prefixes, or curies, the `prefixes` property can be used, which MUST be an array (OPTIONAL). This property MUST exist in the root. Each item of the `prefixes` property MUST have a `name` and `href` property.
+For specifying prefixes, or curies, the `prefixes` property can be used, which MUST be an array. This property MUST exist in the root. Each item of the `prefixes` property MUST have a `name` and `href` property. The `prefixes` property is optional.
 
 ```json
 {

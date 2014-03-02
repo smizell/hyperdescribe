@@ -118,7 +118,7 @@ This HTML document could then be represented like this.
       "href": "/players/russell/bill/stats"
     }]
   }],
-  "link": [{
+  "links": [{
     "rel": "s:nba_worst",
     "href": "/nba-worst",
   }],

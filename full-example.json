@@ -63,7 +63,7 @@
     "name": "add-player",
     "title": "Add Player",
     "method": "POST",
-    "href": "http://example.com/top-players",
+    "href": "/top-players",
     "type": "application/x-www-form-urlencoded",
     "fields": [
       { "name": "givenName", "type": "text" },

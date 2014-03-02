@@ -10,7 +10,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
 
 ```html
 <!DOCTYPE html>
-<html lang="en" prefix="schema: http://schema.org/">
+<html lang="en" prefix="schema: http://schema.org/ s: http://example.com/rels/">
   <head>
     <title>Top 3 NBA Players of All Time</title>
     <link rel="alternate" type="application/hal+json" href="/top-3-players">
@@ -183,7 +183,7 @@ A resource is a thing that is being described in the message based on a particul
 
 #### Properties
 
-For specifying properties for the resource, the `properties` property can be used (OPTIONAL), which is an array. It MAY be an array of of any type, including another `resource`. This allows for nesting resources.
+For specifying properties for the resource, the `properties` property can be used (OPTIONAL), which MAY be a string or array. It MAY be an array of of any type, including another `resource`. This allows for nesting resources.
 
 ### Links
 

@@ -6,7 +6,7 @@ Hyperdescribe is a hypermedia message description format used to describe a hype
 
 ## Example
 
-Starting with a document marked up with HTML+RDFa, we will then describe it with Hyperdescribe. Please note that this does example does not use all of the possible elements of Hyperdescribe.
+Starting with a document marked up with HTML+RDFa, we will then describe it with Hyperdescribe. Please note that this does not use all of the possible elements of Hyperdescribe.
 
 ```html
 <!DOCTYPE html>

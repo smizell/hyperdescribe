@@ -51,6 +51,11 @@ No hypermedia format is equal, and some formats address different hypermedia fac
 
 Current, this is just a format for describing messages. This project contains no code for converting, and will probably stay that way since it will need to be different for each language. If you do write a library for this, please let me know and I'll add a link to it here.
 
+## Examples
+
+* [JSON Example](https://github.com/smizell/hyperdescribe/blob/master/examples/top-players.json)
+* [YAML Example](https://github.com/smizell/hyperdescribe/blob/master/examples/top-players.yaml)
+
 ## TODO
 
 This is currently a work in progress, so there is still a lot of work to be done.

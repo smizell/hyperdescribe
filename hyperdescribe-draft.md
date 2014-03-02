@@ -86,7 +86,7 @@ This HTML document could then be represented like this.
     }]
   },
   "resources": [{
-    "typeof": "schema:Person",
+    "typeof": ["schema:Person"],
     "properties": {
       "givenName": "Michael",
       "familyName": "Jordan"
@@ -97,7 +97,7 @@ This HTML document could then be represented like this.
     }]
   },
   {
-    "typeof": "schema:Person",
+    "typeof": ["schema:Person"],
     "properties": {
       "givenName": "Larry",
       "familyName": "Bird"
@@ -108,7 +108,7 @@ This HTML document could then be represented like this.
     }]
   },
   {
-    "typeof": "schema:Person",
+    "typeof": ["schema:Person"],
     "properties": {
       "givenName": "Bill",
       "familyName": "Russell"

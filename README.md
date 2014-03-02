@@ -15,6 +15,8 @@ Currently, building hypermedia APIs is hard, and education about how to do it ju
 
 Hyperdescribe is a standardized way for describing hypermedia messages. It provides a way for libraries to be built that will automatically convert one hypermedia type to another. 
 
+![Hypermedia Diagram](https://github.com/smizell/hyperdescribe/raw/master/files/img/hyperdescribe.png)
+
 The question may arise, "Why not just write a converter from one hypermedia type to another?" The reason is that we would end up with tons of converters. We'd have one for HAL to Cj, another for Cj to HAL, another for HAL to Siren, and so on. With this description format, you simply build a parser and builder for each hypermedia format. The parser parses from a hypermedia type to Hyperdescribe, and the builder builds from Hyperdescribe to another media format. 
 
 For this to work, this format must be flexible and must include as many available features as possible from other hypermedia formats. There is a lot of collaboration to make this into a great resource.

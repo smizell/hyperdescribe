@@ -190,7 +190,7 @@ The property `href` is a string. This is required for `prefixes`.
 
 ## Meta
 
-For specifyig meta data about the message, the `meta` property can be used. This property MUST exist in the root. It is optional.
+For specifying meta data about the message, the `meta` property can be used. This property MUST exist in the root. It is optional.
 
 ```json
 {
@@ -282,7 +282,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
 
 The `vocab` may be used to specify the vocabulary used for a specific resource. The `vocab` is optional.
 
-For example, if the `vocab` is set to `http://schema.org/` and the `typeof` (descrbied below) is set to `Person`, the vocab for the specific resource will be `http://schema.org/Person`. 
+For example, if the `vocab` is set to `http://schema.org/` and the `typeof` (described below) is set to `Person`, the vocab for the specific resource will be `http://schema.org/Person`. 
 
 #### `typeof`
 
@@ -343,7 +343,7 @@ For specifying actions that can be performed, the `actions` MAY be used. The `ac
 
 ### Action Object
 
-A action object is an object of name and values pairs specifying data about a specific action. The action object MUST exist in a `actions` array.
+An action object is an object of name and values pairs specifying data about a specific action. The action object MUST exist in an `actions` array.
 
 The action object MUST contain the `name`, `method`, `href`, and `fields` properties.
 
@@ -401,7 +401,7 @@ The `type` property specifies the type of the field, which can be any of the typ
 
 ###### `value`
 
-The `value` property is used for specifying the default value of the field. This is optional
+The `value` property is used for specifying the default value of the field. This is optional.
 
 #### `title`
 

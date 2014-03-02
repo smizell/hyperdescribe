@@ -21,7 +21,7 @@ For this to work, this format must be flexible and must include as many availabl
 
 ## What are some uses?
 
-Below are some ways in which this could be used, although I'm sure there are quite a few other uses or this.
+Below are some ways in which this could be used, although I'm sure there are quite a few other uses for this.
 
 ### Build in HTML only, convert to others on server
 

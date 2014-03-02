@@ -104,7 +104,7 @@ This HTML document could then be represented like this.
       ]
     },
     {
-      "vocab": "http://schema.org/"
+      "vocab": "http://schema.org/",
       "typeof":[ "Person" ],
       "properties":{
         "givenName":"Larry",

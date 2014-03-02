@@ -261,7 +261,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       ]
     },
     {
-      "vocab": "http://schema.org/"
+      "vocab": "http://schema.org/",
       "typeof":[ "Person" ],
       "properties":{
         "givenName":"Larry",

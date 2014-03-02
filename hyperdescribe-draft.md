@@ -12,11 +12,11 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
 <!DOCTYPE html>
 <html lang="en" prefix="schema: http://schema.org/ s: http://example.com/rels/">
   <head>
-    <title>Top 3 NBA Players of All Time</title>
+    <title>Top NBA Players of All Time</title>
     <link rel="alternate" type="application/hal+json" href="/top-3-players">
   </head>
   <body>
-    <h1>Top 3 Players of All Time</h1>
+    <h1>Top NBA Players of All Time</h1>
 
     <div typeof="schema:Player">
       <h2>

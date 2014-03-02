@@ -41,7 +41,7 @@
       ]
     },
     {
-      "vocab": "http://schema.org/"
+      "vocab":"http://schema.org/",
       "typeof":[ "Person" ],
       "properties":{
         "givenName":"Larry",

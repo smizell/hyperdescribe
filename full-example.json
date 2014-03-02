@@ -1,0 +1,73 @@
+{
+  "prefixes": [{
+    "name": "schema",
+    "href": "http://schema.org/"
+  },
+  {
+    "name": "s",
+    "href": "http://example.com/rels/"
+  }],
+  "meta": {
+    "language": "en",
+    "data": {
+      "title": "Top NBA Players of All Time"
+    },
+    "links": [{
+      "rel": "alternate",
+      "type": "application/hal+json",
+      "href": "/top-players"
+    },
+    {
+      "rel": "self",
+      "href": "/top-players"
+    }]
+  },
+  "resources": [{
+    "typeof": "schema:Person",
+    "properties": {
+      "givenName": "Michael",
+      "familyName": "Jordan"
+    },
+    "links": [{
+      "rel": "s:stats",
+      "href": "/players/jordan/michael/stats"
+    }]
+  },
+  {
+    "typeof": "schema:Person",
+    "properties": {
+      "givenName": "Larry",
+      "familyName": "Bird"
+    },
+    "links": [{
+      "rel": "s:stats",
+      "href": "/players/bird/larry/stats"
+    }]
+  },
+  {
+    "typeof": "schema:Person",
+    "properties": {
+      "givenName": "Bill",
+      "familyName": "Russell"
+    },
+    "links": [{
+      "rel": "s:stats",
+      "href": "/players/russell/bill/stats"
+    }]
+  }],
+  "link": [{
+    "rel": "s:nba_worst",
+    "href": "/nba-worst",
+  }],
+  "actions": [{
+    "name": "add-player",
+    "title": "Add Player",
+    "method": "POST",
+    "href": "http://example.com/top-players",
+    "type": "application/x-www-form-urlencoded",
+    "fields": [
+      { "name": "givenName", "type": "text" },
+      { "name": "familyName", "type": "text" }
+    ]
+  }]
+}

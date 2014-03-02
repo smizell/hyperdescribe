@@ -45,6 +45,15 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         Check out Russell's <a rel="s:stats" href="/players/russell/bill/stats">stats</a>.
       </p>
     </div>
+
+    <p>
+      Also check out <a rel="s:nba_worst" href="/nba-worst">NBA Worst Players</a>.
+    </p>
+
+    <form name="add-player" method="POST" action="/top-players">
+      <input type="text" name="givenName" />
+      <input type="text" name="familyName" />
+    </form>
   </body>
 </html>
 ```
@@ -64,16 +73,16 @@ This HTML document could then be represented like this.
   "meta": {
     "language": "en",
     "data": {
-      "title": "Top 3 NBA Players of All Time"
+      "title": "Top NBA Players of All Time"
     },
     "links": [{
       "rel": "alternate",
       "type": "application/hal+json",
-      "href": "/top-3-players"
+      "href": "/top-players"
     },
     {
       "rel": "self",
-      "href": "/top-3-players"
+      "href": "/top-players"
     }]
   },
   "resources": [{
@@ -108,6 +117,21 @@ This HTML document could then be represented like this.
       "rel": "s:stats",
       "href": "/players/russell/bill/stats"
     }]
+  }],
+  "link": [{
+    "rel": "s:nba_worst",
+    "href": "/nba-worst",
+  }],
+  "actions": [{
+    "name": "add-player",
+    "title": "Add Player",
+    "method": "POST",
+    "href": "/top-players",
+    "type": "application/x-www-form-urlencoded",
+    "fields": [
+      { "name": "givenName", "type": "text" },
+      { "name": "familyName", "type": "text" }
+    ]
   }]
 }
 ```

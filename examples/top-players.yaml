@@ -20,8 +20,9 @@
         href: "/top-players"
   resources: 
     - 
-      typeof: 
-        - "schema:Person"
+      context: 
+        typeof: 
+          - "schema:Person"
       properties: 
         givenName: "Michael"
         familyName: "Jordan"
@@ -30,9 +31,10 @@
           rel: "s:stats"
           href: "/players/jordan/michael/stats"
     - 
-      vocab: "http://schema.org/"
-      typeof: 
-        - "Person"
+      context: 
+        vocab: "http://schema.org/"
+        typeof: 
+          - "Person"
       properties: 
         givenName: "Larry"
         familyName: "Bird"
@@ -41,8 +43,9 @@
           rel: "s:stats"
           href: "/players/bird/larry/stats"
     - 
-      typeof: 
-        - "http://schema.org/Person"
+      context: 
+        typeof: 
+          - "http://schema.org/Person"
       properties: 
         givenName: "Bill"
         familyName: "Russell"

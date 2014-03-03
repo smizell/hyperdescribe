@@ -1,6 +1,6 @@
 # Hyperdescribe
 
-**Version**: 0.0.1
+**Version**: 0.0.2
 
 Hyperdescribe is a hypermedia message description format used to describe a hypermedia message. The purpose of this format is to provide a way to convert from one hypermedia format to another. In other words, once a message has been parsed into Hyperdescribe, it can then be used to build into other formats.
 
@@ -91,7 +91,9 @@ This HTML document could then be represented like this.
   },
   "resources":[
     {
-      "typeof":[ "schema:Person" ],
+      "context": {
+        "typeof":[ "schema:Person" ]
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -104,8 +106,10 @@ This HTML document could then be represented like this.
       ]
     },
     {
-      "vocab": "http://schema.org/",
-      "typeof":[ "Person" ],
+      "context": {
+        "vocab": "http://schema.org/",
+        "typeof":[ "Person" ]
+      },
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -118,7 +122,9 @@ This HTML document could then be represented like this.
       ]
     },
     {
-      "typeof":[ "http://schema.org/Person" ],
+      "context": {
+        "typeof":[ "http://schema.org/Person" ]
+      },
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"
@@ -190,7 +196,7 @@ The property `href` is a string. This is required for `prefixes`.
 
 ## Meta
 
-For specifying meta data about the message, the `meta` property can be used. This property MUST exist in the root. It is optional.
+For specifying meta data about the message, the `meta` property can be used. This property MAY exist in the root or in a resource object. It is optional.
 
 ```json
 {
@@ -248,7 +254,9 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
   ],
   "resources":[
     {
-      "typeof":[ "schema:Person" ],
+      "context": {
+        "typeof":[ "schema:Person" ]
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -261,8 +269,10 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       ]
     },
     {
-      "vocab": "http://schema.org/",
-      "typeof":[ "Person" ],
+      "context": {
+        "vocab": "http://schema.org/",
+        "typeof":[ "Person" ]
+      }, 
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -278,13 +288,17 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
 }
 ```
 
-#### `vocab`
+#### `context`
+
+The `context` property can be used to express the `vocab` and/or `typeof` of a a resource object. This is optional.
+
+##### `vocab`
 
 The `vocab` may be used to specify the vocabulary used for a specific resource. The `vocab` is optional.
 
 For example, if the `vocab` is set to `http://schema.org/` and the `typeof` (described below) is set to `Person`, the vocab for the specific resource will be `http://schema.org/Person`. 
 
-#### `typeof`
+##### `typeof`
 
 The `typeof` property is used to tell what type of resource the resource object is. The `typeof` property MUST be an array, which allows for multiple types to be specified. The `typeof` property is optional.
 

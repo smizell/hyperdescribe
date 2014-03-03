@@ -28,7 +28,9 @@
   },
   "resources":[
     {
-      "typeof":[ "schema:Person" ],
+      "context": {
+        "typeof":[ "schema:Person" ]
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -41,8 +43,10 @@
       ]
     },
     {
-      "vocab":"http://schema.org/",
-      "typeof":[ "Person" ],
+      "context": {
+        "vocab": "http://schema.org/",
+        "typeof":[ "Person" ]
+      },
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -55,7 +59,9 @@
       ]
     },
     {
-      "typeof":[ "http://schema.org/Person" ],
+      "context": {
+        "typeof":[ "http://schema.org/Person" ]
+      },
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"

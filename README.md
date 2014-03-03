@@ -25,13 +25,13 @@ For this to work, this format must be flexible and must include as many availabl
 
 Below are some ways in which this could be used, although I'm sure there are quite a few other uses for this.
 
-### Build in HTML only, convert to others on server
+### Build your API in HTML only, convert to others on server
 
 Currently, in most frameworks, a person must build separate representations for each format they want to serve from their API. This means creating an HTML and then serializing to a JSON format. 
 
 With Hyperdescribe, a person can build just the HTML representation, use a library to convert from HTML to Hyperdescribe, and then from Hyperdescribe to any other supported format. Build once, serve in many different ways.
 
-### Build in Hyperdescribe, convert to others on server
+### Build your API in Hyperdescribe, convert to others on server
 
 Instead of building to HTML like just mentioned, you could describe your hypermedia with Hyperdescribe and from there convert to other formats.
 

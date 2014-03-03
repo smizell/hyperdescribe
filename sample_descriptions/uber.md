@@ -3,6 +3,8 @@ Describing an Uber Document
 
 ## Original Uber Document
 
+This is pulled from the [Uber documentation](https://rawgithub.com/mamund/media-types/master/uber-hypermedia.html#_json_example).
+
 ```json
 {
   "uber" :

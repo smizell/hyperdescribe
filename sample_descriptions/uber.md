@@ -153,7 +153,7 @@ There are a couple of things missing here so far.
           "rel":"item",
           "url":"http://example.org/people/1",
           "context":{
-            "typeof":"http://schema.org/Person"
+            "typeof":["http://schema.org/Person"]
           },
           "properties":{
             "givenName":"John",
@@ -166,7 +166,7 @@ There are a couple of things missing here so far.
           "rel":"item",
           "url":"http://example.org/people/2",
           "context":{
-            "typeof":"http://schema.org/Person"
+            "typeof":["http://schema.org/Person"]
           },
           "properties":{
             "givenName":"Jane",
@@ -236,7 +236,7 @@ There are a couple of things missing here so far.
           "rel":"item",
           "url":"http://example.org/places/a",
           "context":{
-            "typeof":"http://schema.org/Place"
+            "typeof":["http://schema.org/Place"]
           },
           "properties":{
             "streetAddress":"123 Main Street",
@@ -254,7 +254,7 @@ There are a couple of things missing here so far.
           "rel":"item",
           "url":"http://example.org/places/b",
           "context":{
-            "typeof":"http://schema.org/Place"
+            "typeof":["http://schema.org/Place"]
           },
           "properties":{
             "streetAddress":"1456 Grand Ave.",

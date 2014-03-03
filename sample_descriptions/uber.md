@@ -150,7 +150,6 @@ There are a couple of things missing here so far.
       "url":"http://example.org/people/",
       "resources":[
         {
-          "name":"person",
           "rel":"item",
           "url":"http://example.org/people/1",
           "context":{
@@ -164,7 +163,6 @@ There are a couple of things missing here so far.
           }
         },
         {
-          "name":"person",
           "rel":"item",
           "url":"http://example.org/people/2",
           "context":{

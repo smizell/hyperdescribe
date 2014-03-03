@@ -18,7 +18,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
   <body>
     <h1>Top NBA Players of All Time</h1>
 
-    <div typeof="schema:Player">
+    <div typeof="schema:Player" rel="s:player" resource="/players/jordan/michael">
       <h2>
         <span property="givenName">Michael</span>
         <span property="fullName">Jordan</span>
@@ -27,7 +27,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         Check out Jordan's <a rel="s:stats" href="/players/jordan/michael/stats">stats</a>.
       </p>
     </div>
-    <div typeof="schema:Player">
+    <div typeof="schema:Player" rel="s:player" resource="/players/bird/larry">
       <h2>
         <span property="givenName">Larry</span>
         <span property="fullName">Bird</span>
@@ -36,7 +36,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         Check out Bird's <a rel="s:stats" href="/players/bird/larry/stats">stats</a>.
       </p>
     </div>
-    <div typeof="schema:Player">
+    <div typeof="schema:Player" rel="s:player" resource="/players/russell/bill">
       <h2>
         <span property="givenName">Bill</span>
         <span property="fullName">Russell</span>
@@ -94,6 +94,8 @@ This HTML document could then be represented like this.
       "context": {
         "typeof":[ "schema:Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/jordan/michael",
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -110,6 +112,8 @@ This HTML document could then be represented like this.
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/bird/larry",
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -125,6 +129,8 @@ This HTML document could then be represented like this.
       "context": {
         "typeof":[ "http://schema.org/Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/russell/bill",
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"
@@ -303,6 +309,14 @@ For example, if the `vocab` is set to `http://schema.org/` and the `typeof` (des
 The `typeof` property is used to tell what type of resource the resource object is. The `typeof` property MUST be an array, which allows for multiple types to be specified. The `typeof` property is optional.
 
 Used along with the `vocab` property, it can be something like `Person`. Used with a prefix, it can be something like `schema:Person`, where `schema` is a URL prefix (note the example in this section). In this case, the `typeof` with the prefix would be `http://schema.org/Person`.
+
+#### `rel`
+
+The `rel` property specifies the link relation for the resource object. This is optional.
+
+#### `url`
+
+The `url` property specifies the URL for the resource object. This is optional.
 
 #### `properties`
 

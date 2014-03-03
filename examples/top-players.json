@@ -31,6 +31,8 @@
       "context": {
         "typeof":[ "schema:Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/jordan/michael",
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -47,6 +49,8 @@
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/bird/larry",
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -62,6 +66,8 @@
       "context": {
         "typeof":[ "http://schema.org/Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/russell/bill",
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"

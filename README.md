@@ -55,8 +55,8 @@ Current, this is just a format for describing messages. This project contains no
 
 ## Examples
 
-* [JSON Example](https://github.com/smizell/hyperdescribe/blob/master/examples/top-players.json)
-* [YAML Example](https://github.com/smizell/hyperdescribe/blob/master/examples/top-players.yaml)
+* [Describing an HTML Document](https://github.com/smizell/hyperdescribe/blob/master/examples/html.md)
+* [Describing an Uber Message](https://github.com/smizell/hyperdescribe/blob/master/examples/uber.md)
 
 ## TODO
 

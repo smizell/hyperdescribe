@@ -62,7 +62,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
   "links":[
     {
       "rel":"next",
-      "href":"/orders"
+      "href":"/orders?page=2"
     },
     {
       "rel":"ea:admin",

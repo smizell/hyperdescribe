@@ -61,10 +61,6 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
   ],
   "links":[
     {
-      "rel":"self",
-      "href":"/orders"
-    },
-    {
       "rel":"next",
       "href":"/orders"
     },
@@ -81,6 +77,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
   ],
   "resources": [
     {
+      "url": "/orders",
       "properties": {
         "currentlyProcessing": 14,
         "shippedToday": 20

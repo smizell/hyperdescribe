@@ -82,45 +82,45 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       "properties": {
         "currentlyProcessing": 14,
         "shippedToday": 20
-      },
-      {
-        "rel": "ea:order",
-        "url": "/orders/123",
-        "properties": {
-          "total": 30.00,
-          "currency": "USD",
-          "status": "shipped"
-        },
-        "links": [
-          {
-            "rel":"ea:basket",
-            "href":"/baskets/98712"
-          },
-          {
-            "rel":"ea:customer",
-            "href":"/customers/7809"
-          }
-        ]
-      },
-      {
-        "rel": "ea:order",
-        "url": "/orders/124",
-        "properties": {
-          "total": 20.00,
-          "currency": "USD",
-          "status": "processing"
-        },
-        "links": [
-          {
-            "rel":"ea:basket",
-            "href":"/baskets/97213"
-          },
-          {
-            "rel":"ea:customer",
-            "href":"/customers/12369"
-          }
-        ]
       }
+    },
+    {
+      "rel": "ea:order",
+      "url": "/orders/123",
+      "properties": {
+        "total": 30.00,
+        "currency": "USD",
+        "status": "shipped"
+      },
+      "links": [
+        {
+          "rel":"ea:basket",
+          "href":"/baskets/98712"
+        },
+        {
+          "rel":"ea:customer",
+          "href":"/customers/7809"
+        }
+      ]
+    },
+    {
+      "rel": "ea:order",
+      "url": "/orders/124",
+      "properties": {
+        "total": 20.00,
+        "currency": "USD",
+        "status": "processing"
+      },
+      "links": [
+        {
+          "rel":"ea:basket",
+          "href":"/baskets/97213"
+        },
+        {
+          "rel":"ea:customer",
+          "href":"/customers/12369"
+        }
+      ]
     }
   ],
   "actions": [

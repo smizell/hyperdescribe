@@ -77,6 +77,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
   ],
   "resources": [
     {
+      "rel": "self",
       "url": "/orders",
       "properties": {
         "currentlyProcessing": 14,

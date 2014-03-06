@@ -356,7 +356,13 @@ The `url` property specifies the URL for the resource object. This is optional.
 
 #### `properties`
 
-The `properties` property is an object that contains names and values representing the property of the resource object. The values for each property can be of any type, such as another object or an array. This allows for flexibility.
+The `properties` property is an object that contains names and values representing the property of the resource object. The values for each property can be any of the following types:
+
+* number
+* string
+* boolean (true/false)
+* null
+* array that contains only resource objects
 
 #### `links`
 

@@ -87,16 +87,14 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       },
       "resources": [
         {
+          "rel": "ea:order",
+          "url": "/orders/123",
           "properties": {
             "total": 30.00,
             "currency": "USD",
             "status": "shipped"
           },
           "links": [
-            {
-              "rel":"self",
-              "href":"/orders/123"
-            },
             {
               "rel":"ea:basket",
               "href":"/baskets/98712"
@@ -108,16 +106,14 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
           ]
         },
         {
+          "rel": "ea:order",
+          "url": "/orders/124",
           "properties": {
             "total": 20.00,
             "currency": "USD",
             "status": "processing"
           },
           "links": [
-            {
-              "rel":"self",
-              "href":"/orders/124"
-            },
             {
               "rel":"ea:basket",
               "href":"/baskets/97213"

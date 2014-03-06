@@ -1,6 +1,6 @@
 # Hyperdescribe
 
-**Version**: 0.0.2
+**Version**: 0.0.3
 
 Hyperdescribe is a hypermedia message description format used to describe a hypermedia message. The purpose of this format is to provide a way to convert from one hypermedia format to another. In other words, once a message has been parsed into Hyperdescribe, it can then be used to build into other formats.
 
@@ -24,7 +24,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         <span property="fullName">Jordan</span>
       </h2>
       <p>
-        Check out Jordan's <a rel="s:stats" href="/players/jordan/michael/stats">stats</a>.
+        Check out Jordan's <a rel="s:stats" href="/players/jordan/michael/stats" title="Stats">stats</a>.
       </p>
     </div>
     <div typeof="schema:Player" rel="s:player" resource="/players/bird/larry">
@@ -33,7 +33,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         <span property="fullName">Bird</span>
       </h2>
       <p>
-        Check out Bird's <a rel="s:stats" href="/players/bird/larry/stats">stats</a>.
+        Check out Bird's <a rel="s:stats" href="/players/bird/larry/stats" title="Stats">stats</a>.
       </p>
     </div>
     <div typeof="schema:Player" rel="s:player" resource="/players/russell/bill">
@@ -42,17 +42,17 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         <span property="fullName">Russell</span>
       </h2>
       <p>
-        Check out Russell's <a rel="s:stats" href="/players/russell/bill/stats">stats</a>.
+        Check out Russell's <a rel="s:stats" href="/players/russell/bill/stats" title="Stats">stats</a>.
       </p>
     </div>
 
     <p>
-      Also check out <a rel="s:nba_worst" href="/nba-worst">NBA Worst Players</a>.
+      Also check out <a rel="s:nba_worst" href="/nba-worst" title="NBA Worst Players">NBA Worst Players</a>.
     </p>
 
-    <form name="add-player" method="POST" action="/top-players">
-      <input type="text" name="givenName" />
-      <input type="text" name="familyName" />
+    <form name="add-player" method="POST" action="/top-players" rel="s:add_player">
+      <input type="text" name="givenName" placeholder="First Name" />
+      <input type="text" name="familyName" placeholder="Last Name" />
     </form>
   </body>
 </html>
@@ -96,6 +96,10 @@ This HTML document could then be represented like this.
       },
       "rel": "s:player",
       "url": "/players/jordan/michael",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -103,7 +107,8 @@ This HTML document could then be represented like this.
       "links":[
         {
           "rel":"s:stats",
-          "href":"/players/jordan/michael/stats"
+          "href":"/players/jordan/michael/stats",
+          "label": "Stats"
         }
       ]
     },
@@ -114,6 +119,10 @@ This HTML document could then be represented like this.
       },
       "rel": "s:player",
       "url": "/players/bird/larry",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -121,7 +130,8 @@ This HTML document could then be represented like this.
       "links":[
         {
           "rel":"s:stats",
-          "href":"/players/bird/larry/stats"
+          "href":"/players/bird/larry/stats",
+          "label": "Stats"
         }
       ]
     },
@@ -131,6 +141,10 @@ This HTML document could then be represented like this.
       },
       "rel": "s:player",
       "url": "/players/russell/bill",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"
@@ -138,7 +152,8 @@ This HTML document could then be represented like this.
       "links":[
         {
           "rel":"s:stats",
-          "href":"/players/russell/bill/stats"
+          "href":"/players/russell/bill/stats",
+          "label": "Stats"
         }
       ]
     }
@@ -146,7 +161,8 @@ This HTML document could then be represented like this.
   "links":[
     {
       "rel":"s:nba_worst",
-      "href":"/nba-worst"
+      "href":"/nba-worst",
+      "label": "NBA Worst Players"
     }
   ],
   "actions":[
@@ -159,11 +175,13 @@ This HTML document could then be represented like this.
       "fields":[
         {
           "name":"givenName",
-          "type":"text"
+          "type":"text",
+          "label": "First Name"
         },
         {
           "name":"familyName",
-          "type":"text"
+          "type":"text",
+          "label": "Last Name"
         }
       ]
     }
@@ -263,6 +281,12 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       "context": {
         "typeof":[ "schema:Person" ]
       },
+      "rel": "s:player",
+      "url": "/players/jordan/michael",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
@@ -270,7 +294,8 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       "links":[
         {
           "rel":"s:stats",
-          "href":"/players/jordan/michael/stats"
+          "href":"/players/jordan/michael/stats",
+          "label": "Stats"
         }
       ]
     },
@@ -278,7 +303,13 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       "context": {
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
-      }, 
+      },
+      "rel": "s:player",
+      "url": "/players/bird/larry",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
@@ -286,7 +317,8 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       "links":[
         {
           "rel":"s:stats",
-          "href":"/players/bird/larry/stats"
+          "href":"/players/bird/larry/stats",
+          "label": "Stats"
         }
       ]
     }
@@ -309,6 +341,10 @@ For example, if the `vocab` is set to `http://schema.org/` and the `typeof` (des
 The `typeof` property is used to tell what type of resource the resource object is. The `typeof` property MUST be an array, which allows for multiple types to be specified. The `typeof` property is optional.
 
 Used along with the `vocab` property, it can be something like `Person`. Used with a prefix, it can be something like `schema:Person`, where `schema` is a URL prefix (note the example in this section). In this case, the `typeof` with the prefix would be `http://schema.org/Person`.
+
+#### `labels`
+
+The `labels` property is an object of names of values for property names (from `properties`) and a human-readable label for that property. This is optional.
 
 #### `rel`
 
@@ -347,7 +383,8 @@ A link object is an object of name and values pairs specifying data about a spec
   "links":[
     {
       "rel":"s:nba_worst",
-      "href":"/nba-worst"
+      "href":"/nba-worst",
+      "label": "NBA Worst Players"
     }
   ]
 }
@@ -364,6 +401,10 @@ The `href` property specifies the URL for the resource being linked. The `href` 
 ### `type`
 
 The `type` property specifies the media type of the resource being linked. This is optional.
+
+### `label`
+
+The `label` property is used to give a human-readable label to the field. This is optional.
 
 ## Actions
 
@@ -389,11 +430,13 @@ The action object MAY contain the `title` and `type` properties.
       "fields":[
         {
           "name":"givenName",
-          "type":"text"
+          "type":"text",
+          "label": "First Name"
         },
         {
           "name":"familyName",
-          "type":"text"
+          "type":"text",
+          "label": "Last Name"
         }
       ]
     }
@@ -430,6 +473,10 @@ The `type` property specifies the type of the field, which can be any of the typ
 ###### `value`
 
 The `value` property is used for specifying the default value of the field. This is optional.
+
+###### `label`
+
+The `label` property is used to give a human-readable label to the field. This is optional.
 
 #### `title`
 

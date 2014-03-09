@@ -81,11 +81,11 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
   "meta":{
     "links":[
       {
-        "rel":"self",
+        "rel":["self"],
         "href":"http://example.org/friends/"
       },
       {
-        "rel":"feed",
+        "rel":["feed"],
         "href":"http://example.org/friends/rss"
       }
     ]
@@ -93,7 +93,7 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
   "resources": [
     {
       "url": "http://example.org/friends/jdoe",
-      "rel": "item",
+      "rel": ["item"],
       "labels": {
         "full-name": "Full Name",
         "email": "Email"
@@ -103,13 +103,13 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
         "email": "jdoe@example.org"
       },
       "links" : [
-        {"rel" : "blog", "href" : "http://examples.org/blogs/jdoe", "label" : "Blog"},
-        {"rel" : "avatar", "href" : "http://examples.org/images/jdoe", "label" : "Avatar"}
+        {"rel" : ["blog"], "href" : "http://examples.org/blogs/jdoe", "label" : "Blog"},
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/jdoe", "label" : "Avatar"}
       ]
     },
     {
       "url": "http://example.org/friends/msmith",
-      "rel": "item",
+      "rel": ["item"],
       "labels": {
         "full-name": "Full Name",
         "email": "Email"
@@ -119,13 +119,13 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
         "email": "msmith@example.org"
       },
       "links" : [
-        {"rel" : "blog", "href" : "http://examples.org/blogs/msmith", "label" : "Blog"},
-        {"rel" : "avatar", "href" : "http://examples.org/images/msmith", "label" : "Avatar"}
+        {"rel" : ["blog"], "href" : "http://examples.org/blogs/msmith", "label" : "Blog"},
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/msmith", "label" : "Avatar"}
       ]
     },
     {
       "url": "http://example.org/friends/rwilliams",
-      "rel": "item",
+      "rel": ["item"],
       "labels": {
         "full-name": "Full Name",
         "email": "Email"
@@ -135,8 +135,8 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
         "email": "rwilliams@example.org"
       },
       "links" : [
-        {"rel" : "blog", "href" : "http://examples.org/blogs/rwilliams", "label" : "Blog"},
-        {"rel" : "avatar", "href" : "http://examples.org/images/rwilliams", "label" : "Avatar"}
+        {"rel" : ["blog"], "href" : "http://examples.org/blogs/rwilliams", "label" : "Blog"},
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/rwilliams", "label" : "Avatar"}
       ]
     }
   ],

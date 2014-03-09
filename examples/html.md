@@ -56,7 +56,6 @@ Describing an HTML+RDFa Document
 ## Described with Hyperdescribe
 
 ```json
-
 {
   "prefixes":[
     {
@@ -75,12 +74,12 @@ Describing an HTML+RDFa Document
     },
     "links":[
       {
-        "rel":"alternate",
+        "rel":["alternate"],
         "type":"application/hal+json",
         "href":"/top-players"
       },
       {
-        "rel":"self",
+        "rel":["self"],
         "href":"/top-players"
       }
     ]
@@ -90,16 +89,21 @@ Describing an HTML+RDFa Document
       "context": {
         "typeof":[ "schema:Person" ]
       },
-      "rel": "s:player",
+      "rel": ["s:player"],
       "url": "/players/jordan/michael",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Michael",
         "familyName":"Jordan"
       },
       "links":[
         {
-          "rel":"s:stats",
-          "href":"/players/jordan/michael/stats"
+          "rel":["s:stats"],
+          "href":"/players/jordan/michael/stats",
+          "label": "Stats"
         }
       ]
     },
@@ -108,16 +112,21 @@ Describing an HTML+RDFa Document
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
-      "rel": "s:player",
+      "rel":["s:player"],
       "url": "/players/bird/larry",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Larry",
         "familyName":"Bird"
       },
       "links":[
         {
-          "rel":"s:stats",
-          "href":"/players/bird/larry/stats"
+          "rel":["s:stats"],
+          "href":"/players/bird/larry/stats",
+          "label": "Stats"
         }
       ]
     },
@@ -125,24 +134,30 @@ Describing an HTML+RDFa Document
       "context": {
         "typeof":[ "http://schema.org/Person" ]
       },
-      "rel": "s:player",
+      "rel":["s:player"],
       "url": "/players/russell/bill",
+      "labels": {
+        "givenName": "First Name",
+        "familyName": "Last Name"
+      },
       "properties":{
         "givenName":"Bill",
         "familyName":"Russell"
       },
       "links":[
         {
-          "rel":"s:stats",
-          "href":"/players/russell/bill/stats"
+          "rel":["s:stats"],
+          "href":"/players/russell/bill/stats",
+          "label": "Stats"
         }
       ]
     }
   ],
   "links":[
     {
-      "rel":"s:nba_worst",
-      "href":"/nba-worst"
+      "rel":["s:nba_worst"],
+      "href":"/nba-worst",
+      "label": "NBA Worst Players"
     }
   ],
   "actions":[
@@ -151,15 +166,18 @@ Describing an HTML+RDFa Document
       "title":"Add Player",
       "method":"POST",
       "href":"/top-players",
-      "type":"application/x-www-form-urlencoded",
+      "accepts":["application/x-www-form-urlencoded"],
+      "rel": ["s:add-player"],
       "fields":[
         {
           "name":"givenName",
-          "type":"text"
+          "type":"text",
+          "label": "First Name"
         },
         {
           "name":"familyName",
-          "type":"text"
+          "type":"text",
+          "label": "Last Name"
         }
       ]
     }
@@ -184,70 +202,96 @@ Describing an HTML+RDFa Document
       title: "Top NBA Players of All Time"
     links: 
       - 
-        rel: "alternate"
+        rel: 
+          - "alternate"
         type: "application/hal+json"
         href: "/top-players"
       - 
-        rel: "self"
+        rel: 
+          - "self"
         href: "/top-players"
   resources: 
     - 
       context: 
         typeof: 
           - "schema:Person"
-      rel: "s:player"
+      rel: 
+        - "s:player"
       url: "/players/jordan/michael"
+      labels: 
+        givenName: "First Name"
+        familyName: "Last Name"
       properties: 
         givenName: "Michael"
         familyName: "Jordan"
       links: 
         - 
-          rel: "s:stats"
+          rel: 
+            - "s:stats"
           href: "/players/jordan/michael/stats"
+          label: "Stats"
     - 
       context: 
         vocab: "http://schema.org/"
         typeof: 
           - "Person"
-      rel: "s:player"
+      rel: 
+        - "s:player"
       url: "/players/bird/larry"
+      labels: 
+        givenName: "First Name"
+        familyName: "Last Name"
       properties: 
         givenName: "Larry"
         familyName: "Bird"
       links: 
         - 
-          rel: "s:stats"
+          rel: 
+            - "s:stats"
           href: "/players/bird/larry/stats"
+          label: "Stats"
     - 
       context: 
         typeof: 
           - "http://schema.org/Person"
-      rel: "s:player"
+      rel: 
+        - "s:player"
       url: "/players/russell/bill"
+      labels: 
+        givenName: "First Name"
+        familyName: "Last Name"
       properties: 
         givenName: "Bill"
         familyName: "Russell"
       links: 
         - 
-          rel: "s:stats"
+          rel: 
+            - "s:stats"
           href: "/players/russell/bill/stats"
+          label: "Stats"
   links: 
     - 
-      rel: "s:nba_worst"
+      rel: 
+        - "s:nba_worst"
       href: "/nba-worst"
+      label: "NBA Worst Players"
   actions: 
     - 
       name: "add-player"
       title: "Add Player"
       method: "POST"
       href: "/top-players"
-      type: "application/x-www-form-urlencoded"
+      accepts: 
+        - "application/x-www-form-urlencoded"
+      rel: 
+        - "s:add-player"
       fields: 
         - 
           name: "givenName"
           type: "text"
+          label: "First Name"
         - 
           name: "familyName"
           type: "text"
-
+          label: "Last Name"
 ```

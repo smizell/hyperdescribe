@@ -61,23 +61,23 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
   ],
   "links":[
     {
-      "rel":"next",
+      "rel":["next"],
       "href":"/orders?page=2"
     },
     {
-      "rel":"ea:admin",
+      "rel":["ea:admin"],
       "href":"/admins/2",
       "label": "Fred"
     },
     {
-      "rel":"ea:admin",
+      "rel":["ea:admin"],
       "href":"/admins/5",
       "label": "Kate"
     }
   ],
   "resources": [
     {
-      "rel": "self",
+      "rel": ["self"],
       "url": "/orders",
       "properties": {
         "currentlyProcessing": 14,
@@ -85,7 +85,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       }
     },
     {
-      "rel": "ea:order",
+      "rel": ["ea:order"],
       "url": "/orders/123",
       "properties": {
         "total": 30.00,
@@ -94,17 +94,17 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       },
       "links": [
         {
-          "rel":"ea:basket",
+          "rel":["ea:basket"],
           "href":"/baskets/98712"
         },
         {
-          "rel":"ea:customer",
+          "rel":["ea:customer"],
           "href":"/customers/7809"
         }
       ]
     },
     {
-      "rel": "ea:order",
+      "rel": ["ea:order"],
       "url": "/orders/124",
       "properties": {
         "total": 20.00,
@@ -113,11 +113,11 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       },
       "links": [
         {
-          "rel":"ea:basket",
+          "rel":["ea:basket"],
           "href":"/baskets/97213"
         },
         {
-          "rel":"ea:customer",
+          "rel":["ea:customer"],
           "href":"/customers/12369"
         }
       ]

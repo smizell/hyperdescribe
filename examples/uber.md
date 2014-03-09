@@ -135,22 +135,22 @@ There are a couple of things missing here so far.
   "meta":{
     "links":[
       {
-        "rel":"self",
+        "rel":["self"],
         "url":"http://example.org/"
       },
       {
-        "rel":"profile",
+        "rel":["profile"],
         "url":"http://example.org/profiles/people-and-places"
       }
     ]
   },
   "resources":[
     {
-      "rel":"collection",
+      "rel":["collection"],
       "url":"http://example.org/people/",
       "resources":[
         {
-          "rel":"item",
+          "rel":["item"],
           "url":"http://example.org/people/1",
           "context":{
             "typeof":["http://schema.org/Person"]
@@ -163,7 +163,7 @@ There are a couple of things missing here so far.
           }
         },
         {
-          "rel":"item",
+          "rel":["item"],
           "url":"http://example.org/people/2",
           "context":{
             "typeof":["http://schema.org/Person"]
@@ -224,7 +224,7 @@ There are a couple of things missing here so far.
       ]
     },
     {
-      "rel":"collection",
+      "rel":["collection"],
       "url":"http://example.org/places/",
       "resources":[
         {
@@ -233,7 +233,7 @@ There are a couple of things missing here so far.
               "name":"Home"
             }
           },
-          "rel":"item",
+          "rel":["item"],
           "url":"http://example.org/places/a",
           "context":{
             "typeof":["http://schema.org/Place"]
@@ -251,7 +251,7 @@ There are a couple of things missing here so far.
               "name":"Work"
             }
           },
-          "rel":"item",
+          "rel":["item"],
           "url":"http://example.org/places/b",
           "context":{
             "typeof":["http://schema.org/Place"]

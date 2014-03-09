@@ -79,12 +79,12 @@ This HTML document could then be represented like this.
     },
     "links":[
       {
-        "rel":"alternate",
+        "rel":["alternate"],
         "type":"application/hal+json",
         "href":"/top-players"
       },
       {
-        "rel":"self",
+        "rel":["self"],
         "href":"/top-players"
       }
     ]
@@ -94,7 +94,7 @@ This HTML document could then be represented like this.
       "context": {
         "typeof":[ "schema:Person" ]
       },
-      "rel": "s:player",
+      "rel": ["s:player"],
       "url": "/players/jordan/michael",
       "labels": {
         "givenName": "First Name",
@@ -106,7 +106,7 @@ This HTML document could then be represented like this.
       },
       "links":[
         {
-          "rel":"s:stats",
+          "rel":["s:stats"],
           "href":"/players/jordan/michael/stats",
           "label": "Stats"
         }
@@ -117,7 +117,7 @@ This HTML document could then be represented like this.
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
-      "rel": "s:player",
+      "rel":["s:player"],
       "url": "/players/bird/larry",
       "labels": {
         "givenName": "First Name",
@@ -129,7 +129,7 @@ This HTML document could then be represented like this.
       },
       "links":[
         {
-          "rel":"s:stats",
+          "rel":["s:stats"],
           "href":"/players/bird/larry/stats",
           "label": "Stats"
         }
@@ -139,7 +139,7 @@ This HTML document could then be represented like this.
       "context": {
         "typeof":[ "http://schema.org/Person" ]
       },
-      "rel": "s:player",
+      "rel":["s:player"],
       "url": "/players/russell/bill",
       "labels": {
         "givenName": "First Name",
@@ -151,7 +151,7 @@ This HTML document could then be represented like this.
       },
       "links":[
         {
-          "rel":"s:stats",
+          "rel":["s:stats"],
           "href":"/players/russell/bill/stats",
           "label": "Stats"
         }
@@ -160,7 +160,7 @@ This HTML document could then be represented like this.
   ],
   "links":[
     {
-      "rel":"s:nba_worst",
+      "rel":["s:nba_worst"],
       "href":"/nba-worst",
       "label": "NBA Worst Players"
     }
@@ -171,7 +171,8 @@ This HTML document could then be represented like this.
       "title":"Add Player",
       "method":"POST",
       "href":"/top-players",
-      "type":"application/x-www-form-urlencoded",
+      "accepts":["application/x-www-form-urlencoded"],
+      "rel": ["s:add-player"],
       "fields":[
         {
           "name":"givenName",
@@ -231,12 +232,12 @@ For specifying meta data about the message, the `meta` property can be used. Thi
     },
     "links":[
       {
-        "rel":"alternate",
+        "rel":["alternate"],
         "type":"application/hal+json",
         "href":"/top-players"
       },
       {
-        "rel":"self",
+        "rel":["self"],
         "href":"/top-players"
       }
     ]
@@ -281,7 +282,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       "context": {
         "typeof":[ "schema:Person" ]
       },
-      "rel": "s:player",
+      "rel": ["s:player"],
       "url": "/players/jordan/michael",
       "labels": {
         "givenName": "First Name",
@@ -293,7 +294,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       },
       "links":[
         {
-          "rel":"s:stats",
+          "rel": ["s:stats"],
           "href":"/players/jordan/michael/stats",
           "label": "Stats"
         }
@@ -304,7 +305,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
-      "rel": "s:player",
+      "rel": ["s:player"],
       "url": "/players/bird/larry",
       "labels": {
         "givenName": "First Name",
@@ -316,7 +317,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       },
       "links":[
         {
-          "rel":"s:stats",
+          "rel": ["s:stats"],
           "href":"/players/bird/larry/stats",
           "label": "Stats"
         }
@@ -348,7 +349,7 @@ The `labels` property is an object of names of values for property names (from `
 
 #### `rel`
 
-The `rel` property specifies the link relation for the resource object. This is optional.
+The `rel` property specifies the link relations for the resource object. This is an array and is optional.
 
 #### `url`
 
@@ -388,7 +389,7 @@ A link object is an object of name and values pairs specifying data about a spec
 {
   "links":[
     {
-      "rel":"s:nba_worst",
+      "rel": ["s:nba_worst"],
       "href":"/nba-worst",
       "label": "NBA Worst Players"
     }
@@ -398,7 +399,7 @@ A link object is an object of name and values pairs specifying data about a spec
 
 ### `rel`
 
-The `rel` property specifies the link relation for the link. This can be a full URL (e.g. http://example.org/rels/stats) or a prefixed links (e.g. s:stats). The `rel` property is required.
+The `rel` property specifies the link relation for the link. This can be a full URL (e.g. http://example.org/rels/stats) or a prefixed links (e.g. s:stats). The `rel` property is an array and is required.
 
 ### `href`
 
@@ -432,7 +433,8 @@ The action object MAY contain the `title` and `type` properties.
       "title":"Add Player",
       "method":"POST",
       "href":"/top-players",
-      "type":"application/x-www-form-urlencoded",
+      "accepts":["application/x-www-form-urlencoded"],
+      "rel": ["s:add-player"],
       "fields":[
         {
           "name":"givenName",
@@ -461,6 +463,14 @@ The `method` property is used to specify the transport method used for completin
 #### `href`
 
 The `href` property is for specifying the URL for the action. This is required.
+
+#### `accepts`
+
+The `accepts` property specifies the media types the server accepts for this action.
+
+#### `rel`
+
+The `rel` property specifies one or more link relations for the action. This is an array and is optional.
 
 #### `fields`
 

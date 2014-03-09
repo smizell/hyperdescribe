@@ -75,7 +75,7 @@ Describing an HTML+RDFa Document
     "links":[
       {
         "rel":["alternate"],
-        "type":"application/hal+json",
+        "types":["application/hal+json"],
         "href":"/top-players"
       },
       {
@@ -204,7 +204,8 @@ Describing an HTML+RDFa Document
       - 
         rel: 
           - "alternate"
-        type: "application/hal+json"
+        types: 
+          - "application/hal+json"
         href: "/top-players"
       - 
         rel: 

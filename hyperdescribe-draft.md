@@ -80,7 +80,7 @@ This HTML document could then be represented like this.
     "links":[
       {
         "rel":["alternate"],
-        "type":"application/hal+json",
+        "type":["application/hal+json"],
         "href":"/top-players"
       },
       {
@@ -233,7 +233,7 @@ For specifying meta data about the message, the `meta` property can be used. Thi
     "links":[
       {
         "rel":["alternate"],
-        "type":"application/hal+json",
+        "types":["application/hal+json"],
         "href":"/top-players"
       },
       {
@@ -405,9 +405,9 @@ The `rel` property specifies the link relation for the link. This can be a full 
 
 The `href` property specifies the URL for the resource being linked. The `href` property is required.
 
-### `type`
+### `types`
 
-The `type` property specifies the media type of the resource being linked. This is optional.
+The `types` property specifies available the media types of the resource being linked. This is an array and is optional.
 
 ### `label`
 
@@ -466,7 +466,7 @@ The `href` property is for specifying the URL for the action. This is required.
 
 #### `accepts`
 
-The `accepts` property specifies the media types the server accepts for this action.
+The `accepts` property specifies the media types the server accepts for this action. This is optional, and if it is not present, `application/x-www-form-urlencoded` is assumed.
 
 #### `rel`
 

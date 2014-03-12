@@ -73,25 +73,30 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       "rel":["ea:admin"],
       "href":"/admins/5",
       "label": "Kate"
+    },
+    {
+      "rel": ["ea:find"],
+      "href": "/orders{?id}",
+      "templated": true
     }
   ],
   "resources": [
     {
       "rel": ["self"],
       "url": "/orders",
-      "properties": {
-        "currentlyProcessing": 14,
-        "shippedToday": 20
-      }
+      "properties": [
+        { "name": "currentlyProcessing", "value": 14 },
+        { "name": "shippedToday", "value": 20 }
+      ]
     },
     {
       "rel": ["ea:order"],
       "url": "/orders/123",
-      "properties": {
-        "total": 30.00,
-        "currency": "USD",
-        "status": "shipped"
-      },
+      "properties": [
+        { "name": "total", "value": 30.00 },
+        { "name": "currency", "value": "USD" },
+        { "name": "status", "value": "shipped" }
+      ],
       "links": [
         {
           "rel":["ea:basket"],
@@ -106,11 +111,11 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
     {
       "rel": ["ea:order"],
       "url": "/orders/124",
-      "properties": {
-        "total": 20.00,
-        "currency": "USD",
-        "status": "processing"
-      },
+      "properties": [
+        { "name": "total", "value": 20.00 },
+        { "name": "currency", "value": "USD" },
+        { "name": "status", "value": "processing" }
+      ],
       "links": [
         {
           "rel":["ea:basket"],
@@ -119,19 +124,6 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
         {
           "rel":["ea:customer"],
           "href":"/customers/12369"
-        }
-      ]
-    }
-  ],
-  "actions": [
-    {
-      "name":"find",
-      "method":"GET",
-      "href":"/orders",
-      "fields":[
-        {
-          "name":"id",
-          "value": ""
         }
       ]
     }

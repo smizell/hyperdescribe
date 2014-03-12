@@ -1,6 +1,6 @@
 # Hyperdescribe
 
-**Version**: 0.0.3
+**Version**: 0.0.4
 
 Hyperdescribe is a hypermedia message description format used to describe a hypermedia message. The purpose of this format is to provide a way to convert from one hypermedia format to another. In other words, once a message has been parsed into Hyperdescribe, it can then be used to build into other formats.
 
@@ -23,6 +23,7 @@ Starting with a document marked up with HTML+RDFa, we will then describe it with
         <span property="givenName">Michael</span>
         <span property="fullName">Jordan</span>
       </h2>
+      <p><img src="/players/jordan/michael/game-photo.jpg" rel="s:game-photo" alt="Game Photo" /></p>
       <p>
         Check out Jordan's <a rel="s:stats" href="/players/jordan/michael/stats" title="Stats">stats</a>.
       </p>
@@ -96,19 +97,21 @@ This HTML document could then be represented like this.
       },
       "rel": ["s:player"],
       "url": "/players/jordan/michael",
-      "labels": {
-        "givenName": "First Name",
-        "familyName": "Last Name"
-      },
-      "properties":{
-        "givenName":"Michael",
-        "familyName":"Jordan"
-      },
+      "properties":[
+        { "name": "givenName", "value": "Michael", "label": "First Name" },
+        { "name": "familyName", "value": "Jordan", "label": "Last Name" }
+      ],
       "links":[
         {
           "rel":["s:stats"],
           "href":"/players/jordan/michael/stats",
           "label": "Stats"
+        },
+        {
+          "rel":["s:game-photo"],
+          "href":"/players/jordan/michael/game-photo.jpb",
+          "label": "Game Photo",
+          "render": "image"
         }
       ]
     },
@@ -119,14 +122,10 @@ This HTML document could then be represented like this.
       },
       "rel":["s:player"],
       "url": "/players/bird/larry",
-      "labels": {
-        "givenName": "First Name",
-        "familyName": "Last Name"
-      },
-      "properties":{
-        "givenName":"Larry",
-        "familyName":"Bird"
-      },
+      "properties":[
+        { "name": "givenName", "value": "Larry", "label": "First Name" },
+        { "name": "familyName", "value": "Bird", "label": "Last Name" }
+      ],
       "links":[
         {
           "rel":["s:stats"],
@@ -141,14 +140,10 @@ This HTML document could then be represented like this.
       },
       "rel":["s:player"],
       "url": "/players/russell/bill",
-      "labels": {
-        "givenName": "First Name",
-        "familyName": "Last Name"
-      },
-      "properties":{
-        "givenName":"Bill",
-        "familyName":"Russell"
-      },
+      "properties":[
+        { "name": "givenName", "value": "Bill", "label": "First Name" },
+        { "name": "familyName", "value": "Russell", "label": "Last Name" }
+      ],
       "links":[
         {
           "rel":["s:stats"],
@@ -170,8 +165,8 @@ This HTML document could then be represented like this.
       "name":"add-player",
       "title":"Add Player",
       "method":"POST",
-      "href":"/top-players",
-      "accepts":["application/x-www-form-urlencoded"],
+      "url":"/top-players",
+      "sendAs":["application/x-www-form-urlencoded"],
       "rel": ["s:add-player"],
       "fields":[
         {
@@ -284,19 +279,21 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
       },
       "rel": ["s:player"],
       "url": "/players/jordan/michael",
-      "labels": {
-        "givenName": "First Name",
-        "familyName": "Last Name"
-      },
-      "properties":{
-        "givenName":"Michael",
-        "familyName":"Jordan"
-      },
+      "properties":[
+        { "name": "givenName", "value": "Michael", "label": "First Name" },
+        { "name": "familyName", "value": "Jordan", "label": "Last Name" }
+      ],
       "links":[
         {
-          "rel": ["s:stats"],
+          "rel":["s:stats"],
           "href":"/players/jordan/michael/stats",
           "label": "Stats"
+        },
+        {
+          "rel":["s:game-photo"],
+          "href":"/players/jordan/michael/game-photo.jpb",
+          "label": "Game Photo",
+          "render": "image"
         }
       ]
     },
@@ -305,19 +302,15 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
         "vocab": "http://schema.org/",
         "typeof":[ "Person" ]
       },
-      "rel": ["s:player"],
+      "rel":["s:player"],
       "url": "/players/bird/larry",
-      "labels": {
-        "givenName": "First Name",
-        "familyName": "Last Name"
-      },
-      "properties":{
-        "givenName":"Larry",
-        "familyName":"Bird"
-      },
+      "properties":[
+        { "name": "givenName", "value": "Larry", "label": "First Name" },
+        { "name": "familyName", "value": "Bird", "label": "Last Name" }
+      ],
       "links":[
         {
-          "rel": ["s:stats"],
+          "rel":["s:stats"],
           "href":"/players/bird/larry/stats",
           "label": "Stats"
         }
@@ -343,9 +336,17 @@ The `typeof` property is used to tell what type of resource the resource object 
 
 Used along with the `vocab` property, it can be something like `Person`. Used with a prefix, it can be something like `schema:Person`, where `schema` is a URL prefix (note the example in this section). In this case, the `typeof` with the prefix would be `http://schema.org/Person`.
 
-#### `labels`
+#### `id`
 
-The `labels` property is an object of names of values for property names (from `properties`) and a human-readable label for that property. This is optional.
+The `id` property is for uniquely identifying a resource in the document. This MUST be unique for both resources and actions. It is optional.
+
+#### `name`
+
+The `name` property is for identifying a resource in the document. This does not have to be unique. It is optional.
+
+#### `class`
+
+The `class` property is an array of strings. This describes the nature of the resource. It is optional.
 
 #### `rel`
 
@@ -357,13 +358,23 @@ The `url` property specifies the URL for the resource object. This is optional.
 
 #### `properties`
 
-The `properties` property is an object that contains names and values representing the property of the resource object. The values for each property can be any of the following types:
+The `properties` array contains Property objects.
 
-* number
-* string
-* boolean (true/false)
-* null
-* array that contains only resource objects
+##### Property Object
+
+A Property Object contains information about each property for a resource.
+
+###### `name`
+
+The `name` is the name of the property. This is required. It can be a number, string, boolean, or null.
+
+###### `value`
+
+The `value` is the value of the property. This is required. It can be a number, string, boolean, or null.
+
+###### `label`
+
+The `label` is a human-readable name for the property. This is optional. It can be a number, string, boolean, or null.
 
 #### `links`
 
@@ -376,6 +387,10 @@ The property `actions` property is a `actions` array, as outlined below.
 #### `resources`
 
 For embedding resources, a `resources` array can be included in a resource object. 
+
+#### `property`
+
+If a resource is a property for another resource, `property` can be used to specify this relationship. This MAY only exist on a nested resource. This is optional.
 
 ### Links
 
@@ -413,6 +428,22 @@ The `types` property specifies available the media types of the resource being l
 
 The `label` property is used to give a human-readable label to the field. This is optional.
 
+### `transclude`
+
+The `transclude` property is a boolean field. If it is not included, it is false, unless `render` is set (see below). If it is true, it is saying that the link should be included as part of the current document, much like an `<img>` tag in HTML is saying to include an image in the current representation.
+
+### `render`
+
+The `render` property conveys how the link should be transcluded. If render is defined, it is assumed that the link should be transcluded no matter if `transclude` is set or not.
+
+### `template`
+
+The `template` property can be used to show a link is a templated link.
+
+### `property`
+
+The `property` property allows for specifying a property name in relation to the resource the link is within. This field is optional.
+
 ## Actions
 
 For specifying actions that can be performed, the `actions` MAY be used. The `actions` property MAY exist in the root or in a resource object. The `actions` property MUST contain an array or action objects.
@@ -433,7 +464,7 @@ The action object MAY contain the `title` and `type` properties.
       "title":"Add Player",
       "method":"POST",
       "href":"/top-players",
-      "accepts":["application/x-www-form-urlencoded"],
+      "sendAs":["application/x-www-form-urlencoded"],
       "rel": ["s:add-player"],
       "fields":[
         {
@@ -452,6 +483,18 @@ The action object MAY contain the `title` and `type` properties.
 }
 ```
 
+#### `id`
+
+The `id` property is for uniquely identifying a resource in the document. This MUST be unique for both resources and actions. It is optional.
+
+#### `name`
+
+The `name` is a property to specify a name for an action. This is required.
+
+#### `class`
+
+The `class` property is an array of strings. This describes the nature of the action. It is optional.
+
 #### `name`
 
 The `name` is a property to specify a unique name for an action. This is required.
@@ -460,13 +503,13 @@ The `name` is a property to specify a unique name for an action. This is require
 
 The `method` property is used to specify the transport method used for completing the action. If HTTP is the protocol, this would include HTTP verbs, such as GET, POST, PUT, etc. This is required.
 
-#### `href`
+#### `url`
 
-The `href` property is for specifying the URL for the action. This is required.
+The `url` property is for specifying the URL for the action. This is required.
 
-#### `accepts`
+#### `sendAs`
 
-The `accepts` property specifies the media types the server accepts for this action. This is optional, and if it is not present, `application/x-www-form-urlencoded` is assumed.
+The `sendAs` property specifies the media types the server accepts for this action. This is optional, and if it is not present, `application/x-www-form-urlencoded` is assumed.
 
 #### `rel`
 
@@ -494,13 +537,13 @@ The `value` property is used for specifying the default value of the field. This
 
 The `label` property is used to give a human-readable label to the field. This is optional.
 
+###### `mapsTo`
+
+The `mapsTo` property is used to to tell what property a particular field maps to, if any. For example, if there is a property called `email` and a action field called `e` that can take an email address from the resource, `mapsTo` can specify this relationship. This is optional.
+
 #### `title`
 
 The `title` attribute specifies the title of the action. This is optional.
-
-#### `type`
-
-The `type` property specifies the media type to be used for the action. This is optional.
 
 
 

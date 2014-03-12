@@ -94,17 +94,13 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
     {
       "url": "http://example.org/friends/jdoe",
       "rel": ["item"],
-      "labels": {
-        "full-name": "Full Name",
-        "email": "Email"
-      },
-      "properties": {
-        "full-name": "J. Doe",
-        "email": "jdoe@example.org"
-      },
+      "properties": [
+        { "name": "full-name", "value": "J. Doe", "label": "Full Name" },
+        { "name": "email", "value": "jdoe@example.org", "label": "Email" }
+      ],
       "links" : [
         {"rel" : ["blog"], "href" : "http://examples.org/blogs/jdoe", "label" : "Blog"},
-        {"rel" : ["avatar"], "href" : "http://examples.org/images/jdoe", "label" : "Avatar"}
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/jdoe", "label" : "Avatar", "render": "image"}
       ]
     },
     {
@@ -114,13 +110,13 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
         "full-name": "Full Name",
         "email": "Email"
       },
-      "properties": {
-        "full-name": "M. Smith",
-        "email": "msmith@example.org"
-      },
+      "properties": [
+        { "name": "full-name", "value": "M. Smith", "label": "Full Name" },
+        { "name": "email", "value": "msmith@example.org", "label": "Email" }
+      ],
       "links" : [
         {"rel" : ["blog"], "href" : "http://examples.org/blogs/msmith", "label" : "Blog"},
-        {"rel" : ["avatar"], "href" : "http://examples.org/images/msmith", "label" : "Avatar"}
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/msmith", "label" : "Avatar", "render": "image"}
       ]
     },
     {
@@ -130,13 +126,13 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
         "full-name": "Full Name",
         "email": "Email"
       },
-      "properties": {
-        "full-name": "R. Williams",
-        "email": "rwilliams@example.org"
-      },
+      "properties": [
+        { "name": "full-name", "value": "R. Williams", "label": "Full Name" },
+        { "name": "email", "value": "rwilliams@example.org", "label": "Email" }
+      ],
       "links" : [
         {"rel" : ["blog"], "href" : "http://examples.org/blogs/rwilliams", "label" : "Blog"},
-        {"rel" : ["avatar"], "href" : "http://examples.org/images/rwilliams", "label" : "Avatar"}
+        {"rel" : ["avatar"], "href" : "http://examples.org/images/rwilliams", "label" : "Avatar", "render": "image"}
       ]
     }
   ],

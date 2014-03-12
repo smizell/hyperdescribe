@@ -95,7 +95,7 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
       "title": "Add Item",
       "method": "POST",
       "url": "http://api.x.io/orders/42/items",
-      "sendAs": "application/x-www-form-urlencoded",
+      "sendAs": ["application/x-www-form-urlencoded"],
       "fields": [
         { "name": "orderNumber", "type": "hidden", "value": "42" },
         { "name": "productCode", "type": "text" },

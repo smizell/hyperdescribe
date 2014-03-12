@@ -1,4 +1,4 @@
-Describing an Siren Document
+Describing a Siren Document
 ============================
 
 ## Original Siren Document

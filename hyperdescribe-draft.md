@@ -109,7 +109,7 @@ This HTML document could then be represented like this.
         },
         {
           "rel":["s:game-photo"],
-          "href":"/players/jordan/michael/game-photo.jpb",
+          "href":"/players/jordan/michael/game-photo.jpg",
           "label": "Game Photo",
           "render": "image"
         }

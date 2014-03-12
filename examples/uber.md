@@ -247,9 +247,6 @@ The only difficulty I see here now in describing the UBER document is how the ty
           },
           "rel":["item"],
           "url":"http://example.org/places/a",
-          "context":{
-            "typeof":["http://schema.org/Place"]
-          },
           "properties":{
             "streetAddress":"123 Main Street",
             "addressLocalitly":"Byteville",
@@ -265,9 +262,6 @@ The only difficulty I see here now in describing the UBER document is how the ty
           },
           "rel":["item"],
           "url":"http://example.org/places/b",
-          "context":{
-            "typeof":["http://schema.org/Place"]
-          },
           "properties":{
             "streetAddress":"1456 Grand Ave.",
             "addressLocalitly":"Byteville",

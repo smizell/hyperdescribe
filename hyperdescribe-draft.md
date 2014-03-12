@@ -291,7 +291,7 @@ A resource object is an array that MAY have a `vocab`, `typeof`, `properties`, `
         },
         {
           "rel":["s:game-photo"],
-          "href":"/players/jordan/michael/game-photo.jpb",
+          "href":"/players/jordan/michael/game-photo.jpg",
           "label": "Game Photo",
           "render": "image"
         }

@@ -6,7 +6,7 @@ Describing an UBER Document
 This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-types/master/uber-hypermedia.html#_json_example).
 
 ```json
-{
+{ 
   "uber" :
   {
     "version" : "1.0",
@@ -14,19 +14,19 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
     [
       {"rel" : ["self"], "url" : "http://example.org/"},
       {"rel" : ["profile"], "url" : "http://example.org/profiles/people-and-places"},
-
+      
       {
-        "data" :
+        "data" : 
         [
           {
-            "id" : "people",
-            "rel" : ["collection","http://example.org/rels/people"],
+            "id" : "people", 
+            "rel" : ["collection","http://example.org/rels/people"], 
             "url" : "http://example.org/people/",
-            "data" :
+            "data" : 
             [
               {
-                "name" : "create",
-                "rel" : ["http://example.org/rels/create"],
+                "name" : "create", 
+                "rel" : ["http://example.org/rels/create"], 
                 "url" : "http://example.org/people/",
                 "model" : "g={givenName}&f={familyName}&e={email}",
                 "action" : "append"
@@ -46,8 +46,8 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
                   {"name" : "givenName", "value" : "Mike"},
                   {"name" : "familyName", "value" : "Amundsen"},
                   {"name" : "email", "value" : "mike@example.org"},
-                  {"name" : "avatarUrl", "transclude" : "true",
-                      "value" : "http://example.org/avatars/1",
+                  {"name" : "avatarUrl", "transclude" : "true", 
+                      "value" : "http://example.org/avatars/1", 
                       "accepting" : ["image/*"]
                   }
                 ]
@@ -61,18 +61,18 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
                   {"name" : "givenName", "value" : "Mildred"},
                   {"name" : "familyName", "value" : "Amundsen"},
                   {"name" : "email", "value" : "mildred@example.org"},
-                  {"name" : "avatarUrl", "transclude" : "true",
-                      "value" : "http://example.org/avatars/2",
+                  {"name" : "avatarUrl", "transclude" : "true", 
+                      "value" : "http://example.org/avatars/2", 
                       "accepting" : ["image/*"]
                   }
                 ]
               }
             ]
           },
-
+          
           {
-            "id" : "places",
-            "rel" : ["collection","http://example.org/rels/places"],
+            "id" : "places", 
+            "rel" : ["collection","http://example.org/rels/places"], 
             "url" : "http://example.org/places/",
             "data" :
             [
@@ -86,11 +86,14 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
                 "name" : "place",
                 "rel" : ["item","http://example.org/rels/place"],
                 "url" : "http://example.org/places/a",
-                "data" :
+                "data" : 
                 [
                   {
-                    "name" : "name",
-                    "value" : "Home",
+                    "name" : "name", 
+                    "value" : "Home"
+                  },
+                  {
+                    "name" : "address",
                     "data" :
                     [
                       {"name" : "streetAddress", "value" : "123 Main Street"},
@@ -105,12 +108,15 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
                 "name" : "place",
                 "rel" : ["item","http://example.org/rels/place"],
                 "url" : "http://example.org/places/b",
-                "data" :
+                "data" : 
                 [
                   {
-                    "name" : "name",
-                    "value" : "Work",
-                    "data" :
+                    "name" : "name", 
+                    "value" : "Work"
+                  },
+                  {
+                    "name" : "address",
+                    "data" : 
                     [
                       {"name" : "streetAddress", "value" : "1456 Grand Ave."},
                       {"name" : "addressLocalitly", "value" : "Byteville"},
@@ -124,14 +130,12 @@ This is pulled from the [UBER documentation](https://rawgithub.com/mamund/media-
           }
         ]
       }
-    ]
+    ]    
   }
 }
 ```
 
 ## Described with Hyperdescribe
-
-The only difficulty I see here now in describing the UBER document is how the type of place is handled. The actual address data is nested under another data element that just has the name set to either Home or Work. I'm not sure how one would know that the data under the Home or Work elements should be considered properties for the place.
 
 ```json
 {
@@ -150,16 +154,18 @@ The only difficulty I see here now in describing the UBER document is how the ty
   "resources":[
     {
       "id": "people",
-      "rel":["collection"],
+      "rel":["collection","http://example.org/rels/people"],
       "url":"http://example.org/people/",
       "resources":[
         {
-          "rel":["item"],
+          "name": "person",
+          "property": "person",
+          "rel":["item","http://example.org/rels/person"],
           "url":"http://example.org/people/1",
           "properties": [
             { "name": "givenName", "value": "Mike" },
             { "name": "familyName", "value": "Amundsen" },
-            { "name": "email", "value": "mike@example.org" },
+            { "name": "email", "value": "mike@example.org" }
           ],
           "links": [
             {
@@ -171,12 +177,14 @@ The only difficulty I see here now in describing the UBER document is how the ty
           ]
         },
         {
-          "rel":["item"],
+          "name": "person",
+          "property": "person",
+          "rel":["item","http://example.org/rels/person"],
           "url":"http://example.org/people/2",
           "properties": [
             { "name": "givenName", "value": "Mildred" },
             { "name": "familyName", "value": "Amundsen" },
-            { "name": "email", "value": "mildred@example.org" },
+            { "name": "email", "value": "mildred@example.org" }
           ],
           "links": [
             {
@@ -190,8 +198,9 @@ The only difficulty I see here now in describing the UBER document is how the ty
       ],
       "actions":[
         {
-          "name":"http://example.org/rels/create",
+          "name":"create",
           "url":"http://example.org/people/",
+          "rel":["http://example.org/rels/create"],
           "method":"POST",
           "fields":[
             {
@@ -214,6 +223,7 @@ The only difficulty I see here now in describing the UBER document is how the ty
         {
           "name":"search",
           "url":"http://example.org/people/search",
+          "rel": ["search","collection"],
           "method":"GET",
           "fields":[
             {
@@ -236,44 +246,56 @@ The only difficulty I see here now in describing the UBER document is how the ty
       ]
     },
     {
-      "rel":["collection"],
+      "id":"places",
+      "rel":["collection","http://example.org/rels/places"],
       "url":"http://example.org/places/",
       "resources":[
         {
-          "meta":{
-            "data":{
-              "name":"Home"
-            }
-          },
-          "rel":["item"],
+          "name":"place",
+          "rel":["item","http://example.org/rels/place"],
           "url":"http://example.org/places/a",
-          "properties":{
-            "streetAddress":"123 Main Street",
-            "addressLocalitly":"Byteville",
-            "addressRegion":"MD",
-            "postalCode":"12345"
-          }
+          "properties": [
+            { "name": "name", "value": "Home" }
+          ],
+          "resources": [
+            {
+              "name":"address",
+              "property":"address",
+              "properties":[
+                { "name": "streetAddress", "value": "123 Main Street" },
+                { "name": "addressLocalitly", "value": "Byteville" },
+                { "name": "addressRegion", "value": "MD" },
+                { "name": "postalCode", "value": "12345" }
+              ]
+            }
+          ]
         },
         {
-          "meta":{
-            "data":{
-              "name":"Work"
-            }
-          },
-          "rel":["item"],
+          "name":"place",
+          "rel":["item","http://example.org/rels/place"],
           "url":"http://example.org/places/b",
-          "properties":{
-            "streetAddress":"1456 Grand Ave.",
-            "addressLocalitly":"Byteville",
-            "addressRegion":"MD",
-            "postalCode":"12345"
-          }
+          "properties": [
+            { "name": "name", "value": "Work" }
+          ],
+          "resources": [
+            {
+              "name":"address",
+              "property":"address",
+              "properties":[
+                { "name": "streetAddress", "value": "1456 Grand Ave." },
+                { "name": "addressLocalitly", "value": "Byteville" },
+                { "name": "addressRegion", "value": "MD" },
+                { "name": "postalCode", "value": "12345" }
+              ]
+            }
+          ]
         }
       ],
       "actions":[
         {
           "name":"search",
           "url":"http://example.org/places/search",
+          "rel":["search","collection"],
           "method":"GET",
           "fields":[
             {

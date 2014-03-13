@@ -57,10 +57,13 @@ Current, this is just a format for describing messages. This project contains no
 
 * [Describing an HTML Document](https://github.com/smizell/hyperdescribe/blob/master/examples/html.md)
 * [Describing an Uber Message](https://github.com/smizell/hyperdescribe/blob/master/examples/uber.md)
+* [Describing a Collection+JSON Document](https://github.com/smizell/hyperdescribe/blob/master/examples/cj.md)
+* [Describing a HAL+JSON Document](https://github.com/smizell/hyperdescribe/blob/master/examples/hal.md)
+* [Describing a Siren Document](https://github.com/smizell/hyperdescribe/blob/master/examples/siren.md)
 
 ## TODO
 
 This is currently a work in progress, so there is still a lot of work to be done.
 
 1. Should this support all of the different form fields that HTML5 supports, such as selects and textareas?
-2. How should URI templates be handled?
+2. Should vocab and typeof be part of property objects?

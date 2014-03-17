@@ -78,7 +78,7 @@ An entity is anything that has identity. This can be a person, address, blog pos
 
 ## Default Prefixes
 
-By default, Hyperdescribe will honor all of the prefixes in the [core initial contexts of RDFa](http://www.w3.org/2011/rdfa-context/rdfa-1.1).
+By default, Hyperdescribe will honor all of the prefixes in the [core initial contexts of RDFa](http://www.w3.org/2011/rdfa-context/rdfa-1.1) without having to specify them.
 
 ## Content Object
 

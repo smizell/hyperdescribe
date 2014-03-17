@@ -1,6 +1,6 @@
 # Proposal for Hyperdescribe 0.1.0
 
-**Status**: Incomplete
+**Status**: Proposed
 
 After working through quite a few samples and helping think through UBER, I've come up with some design changes for Hyperdescribe to get it to a usable state. These changes allow for handling media types with data at the root element (like HAL and Siren) and nested data (like Collection+JSON and UBER). 
 

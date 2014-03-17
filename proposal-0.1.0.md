@@ -178,7 +178,7 @@ Context defines the vocab and typeOf to be used for all of the properties in the
 {
   id: String,
   classes: Array,
-  property: 
+  property: String,
   rels: Array,
   url: String,
   method: String,

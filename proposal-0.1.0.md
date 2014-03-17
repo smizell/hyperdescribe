@@ -36,7 +36,7 @@ This also provides a tool for media type designers and implementers to use in de
 }
 ```
 
-Now just an object with one root property, `hyperdescribe`. The `hyperdescribe` property takes an Entity Object. This 
+Now just an object with one root property, `hyperdescribe`. The `hyperdescribe` property takes an Entity Object. 
 
 ## Entity Object
 

@@ -138,12 +138,12 @@ This translates well to HTML+RDFa:
 }
 ```
 
-Context defines the vocab and typeOf to be used for all of the properties in the Entity Object in which it is found. If a Content Object is used, only `typeOf` is REQUIRED.
+Context defines the vocab and typeOf to be used for all of the properties in the Entity Object in which it is found. If a Content Object is used, only `typeOf` is REQUIRED. This is based on the http://schema.org vocab and how RDFa defines vocabularies and types.
 
 ### Available Properties
 
 * `vocab` is a String for the URL to the vocab being used for this entity. It is OPTIONAL.
-* `typeOf` is a String for the type of entity being described here. It is REQUIRED.
+* `typeOf` is an Array for the type of entity being described here. It is REQUIRED.
 
 ## Property Object
 

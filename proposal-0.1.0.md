@@ -21,7 +21,7 @@ This also provides a tool for media type designers and implementers to use in de
 ## Other Questions
 
 1. Should `version` be in every Entity Object? Should it be considered optional meta data?
-2. Should `actions` and `links` be combined? I go back and forth. Currently, I've combined them.
+2. Should `actions` and `links` be combined? I go back and forth. Currently, I've combined them. **Should this combined item be called actions? Links? Transitions?**
 3. Should all Arrays be plural names (e.g. rels, actions, links, etc.)? Reason being, I want this format to be easy for parsing, and I like `for link of links` language.
 4. Should I nest properites, links, etc, under `content` like I'm doing? I think it helps make sense when translating to HTML+RDFa.
 5. Should links/actions be viewed a "links/actions you can take on this particular entity" or "links/actions related to this particular entity?" So far, I have done the latter.

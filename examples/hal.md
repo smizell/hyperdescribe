@@ -116,7 +116,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
         {
           "rels": ["ea:order"],
           "url": "/orders/124",
-          "content":
+          "content": {
             "properties": [
               { "name": "total", "type": "float", "value": "20.00" },
               { "name": "currency", "value": "USD" },

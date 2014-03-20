@@ -19,6 +19,8 @@ The purpose of this format is to make hypermedia easier and to help increaes ado
 3. Links - Links to related entities
 4. Actions - Actions related to this entity
 
+**Hyperdescribe provides a way to describe how a particular message conveys these hypermedia components**.
+
 ## Hyperdescribe Document
 
 ```javascript

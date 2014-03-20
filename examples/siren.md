@@ -77,7 +77,7 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
           "classes": [ "info", "customer" ],
           "rels": [ "http://x.io/rels/customer" ], 
           "url": "http://api.x.io/customers/pj123",
-          "content":
+          "content": {
             "properties": [
               { "name": "customerId", "value": "pj123" },
               { "name": "name", "value": "Peter Joseph" }
@@ -88,7 +88,7 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
       "links": [
         { "rels": [ "previous" ], "url": "http://api.x.io/orders/41" },
         { "rels": [ "next" ], "url": "http://api.x.io/orders/43" }
-      ]
+      ],
       "actions": [
         {
           "classes": "add-item",

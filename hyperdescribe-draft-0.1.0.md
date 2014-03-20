@@ -98,7 +98,7 @@ By default, Hyperdescribe will honor all of the prefixes in the [core initial co
 * `meta` is a Meta Object. It is OPTIONAL.
 * `properties` is an Array of Property Objects. It is OPTIONAL.
 * `links` is an Array of Transition Objects, which MUST all be safe, idempotent links. It is OPTIONAL.
-* `actions` is an Array of Transition Objects, which MUST all be non-safe, idempotent links. It is OPTIONAL.
+* `actions` is an Array of Transition Objects, which MUST all be non-safe, non-idempotent links. It is OPTIONAL.
 * `entities` is an Array of Entity Objects. It is OPTIONAL.
 
 ### Example: Translated to HTML+RDFa

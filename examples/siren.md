@@ -69,7 +69,7 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
       ],
       "entities": [
         {
-          "class": [ "items", "collection" ], 
+          "classes": [ "items", "collection" ], 
           "rels": [ "http://x.io/rels/order-items" ], 
           "url": "http://api.x.io/orders/42/items"
         },
@@ -91,7 +91,7 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
       ],
       "actions": [
         {
-          "classes": "add-item",
+          "classes": [ "add-item" ],
           "label": "Add Item",
           "method": "POST",
           "url": "http://api.x.io/orders/42/items",

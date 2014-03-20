@@ -91,7 +91,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
         { "name": "currentlyProcessing", "type": "integer", "value": "14" },
         { "name": "shippedToday", "type": "integer", "value": "20" }
       ],
-      entities: [
+      "entities": [
         {
           "rels": ["ea:order"],
           "url": "/orders/123",

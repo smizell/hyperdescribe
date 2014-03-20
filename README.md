@@ -3,7 +3,7 @@ Hyperdescribe
 
 A hypermedia message description format.
 
-**Note**: This is currently a work in progress for developing the [first draft](https://github.com/smizell/hyperdescribe/blob/master/hyperdescribe-draft.md).
+**Note**: This is currently a work in progress for developing the [current draft](https://github.com/smizell/hyperdescribe/blob/master/hyperdescribe-draft-0.1.0.md) at version 0.1.0.
 
 This could change drastically before becoming a fully-usable spec.
 

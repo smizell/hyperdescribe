@@ -88,7 +88,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
         }
       ],
       "properties": [
-        { "name": "currentlyProcessing", "type": "integer", value": "14" },
+        { "name": "currentlyProcessing", "type": "integer", "value": "14" },
         { "name": "shippedToday", "type": "integer", "value": "20" }
       ],
       entities: [

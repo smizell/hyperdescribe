@@ -84,7 +84,6 @@ By default, Hyperdescribe will honor all of the prefixes in the [core initial co
 ```javascript
 {
   meta: Object,
-  context: Object,
   properties: Array,
   links: Array,
   actions: Array,
@@ -95,7 +94,6 @@ By default, Hyperdescribe will honor all of the prefixes in the [core initial co
 ### Available Properties
 
 * `meta` is a Meta Object. It is OPTIONAL.
-* `context` is a Context Object. It is OPTIONAL.
 * `properties` is an Array of Property Objects. It is OPTIONAL.
 * `links` is an Array of Transition Objects, which MUST all be safe, idempotent links. It is OPTIONAL.
 * `actions` is an Array of Transition Objects, which MUST all be non-safe, idempotent links. It is OPTIONAL.

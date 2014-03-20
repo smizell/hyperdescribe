@@ -53,80 +53,89 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
 
 ```json
 {
-  "prefixes": [
-    {
-      "name":"ea",
-      "href":"http://example.com/docs/rels/"
-    }
-  ],
-  "links":[
-    {
-      "rel":["next"],
-      "href":"/orders?page=2"
-    },
-    {
-      "rel":["ea:admin"],
-      "href":"/admins/2",
-      "label": "Fred"
-    },
-    {
-      "rel":["ea:admin"],
-      "href":"/admins/5",
-      "label": "Kate"
-    },
-    {
-      "rel": ["ea:find"],
-      "href": "/orders{?id}",
-      "templated": true
-    }
-  ],
-  "resources": [
-    {
-      "rel": ["self"],
-      "url": "/orders",
-      "properties": [
-        { "name": "currentlyProcessing", "value": 14 },
-        { "name": "shippedToday", "value": 20 }
-      ]
-    },
-    {
-      "rel": ["ea:order"],
-      "url": "/orders/123",
-      "properties": [
-        { "name": "total", "value": 30.00 },
-        { "name": "currency", "value": "USD" },
-        { "name": "status", "value": "shipped" }
-      ],
-      "links": [
+  "hyperdescribe": {
+    "version": "0.1.0",
+    "prefixes": [
+      {
+        "name":"ea",
+        "href":"http://example.com/docs/rels/"
+      }
+    ],
+    "content": {
+      "links":[
         {
-          "rel":["ea:basket"],
-          "href":"/baskets/98712"
+          "rel": ["self"],
+          "url": "/orders",
         },
         {
-          "rel":["ea:customer"],
-          "href":"/customers/7809"
-        }
-      ]
-    },
-    {
-      "rel": ["ea:order"],
-      "url": "/orders/124",
-      "properties": [
-        { "name": "total", "value": 20.00 },
-        { "name": "currency", "value": "USD" },
-        { "name": "status", "value": "processing" }
-      ],
-      "links": [
-        {
-          "rel":["ea:basket"],
-          "href":"/baskets/97213"
+          "rels":["next"],
+          "url":"/orders?page=2"
         },
         {
-          "rel":["ea:customer"],
-          "href":"/customers/12369"
+          "rels":["ea:admin"],
+          "url":"/admins/2",
+          "label": "Fred"
+        },
+        {
+          "rels":["ea:admin"],
+          "url":"/admins/5",
+          "label": "Kate"
+        },
+        {
+          "rels": ["ea:find"],
+          "url": "/orders{?id}",
+          "templated": true
+        }
+      ],
+      "properties": [
+        { "name": "currentlyProcessing", "type": "integer", value": "14" },
+        { "name": "shippedToday", "type": "integer", "value": "20" }
+      ],
+      entities: [
+        {
+          "rels": ["ea:order"],
+          "url": "/orders/123",
+          "content": {
+            "properties": [
+              { "name": "total", "type": "float", "value": 30.00 },
+              { "name": "currency", "value": "USD" },
+              { "name": "status", "value": "shipped" }
+            ],
+            "links": [
+              {
+                "rels":["ea:basket"],
+                "href":"/baskets/98712"
+              },
+              {
+                "rels":["ea:customer"],
+                "href":"/customers/7809"
+              }
+            ]
+          }
+        },
+        {
+          "rels": ["ea:order"],
+          "url": "/orders/124",
+          "content":
+            "properties": [
+              { "name": "total", "type": "float", "value": "20.00" },
+              { "name": "currency", "value": "USD" },
+              { "name": "status", "value": "processing" }
+            ],
+            "links": [
+              {
+                "rels":["ea:basket"],
+                "href":"/baskets/97213"
+              },
+              {
+                "rels":["ea:customer"],
+                "href":"/customers/12369"
+              }
+            ]
+          }
         }
       ]
     }
-  ]
+  }
 }
 ```

@@ -313,7 +313,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/jordan/michael"
+        "url": "/players/jordan/michael",
         "context": {
           "typesOf": [ "schema:Player" ]
         },
@@ -361,7 +361,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/russell/bill"
+        "url": "/players/russell/bill",
         "context": {
           "typesOf": [ "schema:Player" ]
         },

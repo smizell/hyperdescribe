@@ -12,7 +12,7 @@ The point of this is to create servers and clients that describe and reference h
 
 ## Purpose
 
-The purpose of this format is to make hypermedia easier and to help increaes adoption. It is also trying to standardize the way we already think about hypermedia messages. When building a client or server that works with a hypermedia type, there are usually these main components:
+The purpose of this format is to make hypermedia easier and to help increase adoption. It is also trying to standardize the way we already think about hypermedia messages. When building a client or server that works with a hypermedia type, there are usually these main components:
 
 1. Entities - Anything that has identity (e.g. Person)
 2. Properites - Properties about that entity (e.g. Name)

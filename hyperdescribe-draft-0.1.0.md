@@ -340,7 +340,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/bird/larry"
+        "url": "/players/bird/larry",
         "context": {
           "typesOf": [ "schema:Player" ]
         },

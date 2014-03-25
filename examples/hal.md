@@ -104,11 +104,11 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
             "transitions": [
               {
                 "rels":["ea:basket"],
-                "href":"/baskets/98712"
+                "url":"/baskets/98712"
               },
               {
                 "rels":["ea:customer"],
-                "href":"/customers/7809"
+                "url":"/customers/7809"
               }
             ]
           }
@@ -125,11 +125,11 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
             "transitions": [
               {
                 "rels":["ea:basket"],
-                "href":"/baskets/97213"
+                "url":"/baskets/97213"
               },
               {
                 "rels":["ea:customer"],
-                "href":"/customers/12369"
+                "url":"/customers/12369"
               }
             ]
           }

@@ -1,6 +1,6 @@
 # Hyperdescribe
 
-**Version**: 0.1.0
+**Version**: 0.1.1
 
 Hyperdescribe is a hypermedia message description format used to describe the different components of a hypermedia message. The goal is to provide a standardized way to describe a message in order to:
 
@@ -95,8 +95,7 @@ By default, Hyperdescribe will honor all of the prefixes in the [core initial co
 
 * `meta` is a Meta Object. It is OPTIONAL.
 * `properties` is an Array of Property Objects. It is OPTIONAL.
-* `links` is an Array of Transition Objects, which MUST all be safe, idempotent links. It is OPTIONAL.
-* `actions` is an Array of Transition Objects, which MUST all be non-safe, idempotent links. It is OPTIONAL.
+* `transitions` is an Array of Transition Objects. It is OPTIONAL.
 * `entities` is an Array of Entity Objects. It is OPTIONAL.
 
 ### Example: Translated to HTML+RDFa
@@ -185,6 +184,7 @@ Context defines the vocab and typeOf to be used for all of the properties in the
   responseTypes: Array,
   requestTypes: Array,
   fields: Array,
+  bodyTemplate: String,
   label: String,
   renderAs: String
 }
@@ -201,6 +201,7 @@ Context defines the vocab and typeOf to be used for all of the properties in the
 * `responseTypes` is an Array of media types available to be sent as the response. It is OPTIONAL.
 * `requestTypes` is an Array of media types the server will accept in the request. It is OPTIONAL.
 * `fields` is an Array of Field Objects. It is OPTIONAL.
+* `bodyTemplate` is a URI template to be used in the request body. It is OPTIONAL.
 * `label` is a String for an OPTIONAL, human-readable name of the property. It is OPTIONAL.
 * `renderAs` is a String conveying what the link response should be rendered as. It is OPTIONAL.
 

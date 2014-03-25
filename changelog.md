@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.1.1
+
+* Combine links and actions as transitions
+* Add `bodyTemplate` to Transitions
+
 ## v0.1.0
 
 * Add root `hyperdescribe` element

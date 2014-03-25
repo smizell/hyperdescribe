@@ -120,13 +120,11 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
           ]
         }
       ],
-      "links": [
+      "transitions": [
         {
           "rel": ["feed"],
           "url": "http://example.org/friends/rss"
-        }
-      ],
-      "actions": [
+        },
         {
           "classes": ["search"],
           "label": "Search",

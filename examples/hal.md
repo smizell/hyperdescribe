@@ -62,7 +62,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
       }
     ],
     "content": {
-      "links":[
+      "transitions":[
         {
           "rel": ["self"],
           "url": "/orders",
@@ -101,7 +101,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
               { "name": "currency", "value": "USD" },
               { "name": "status", "value": "shipped" }
             ],
-            "links": [
+            "transitions": [
               {
                 "rels":["ea:basket"],
                 "href":"/baskets/98712"
@@ -122,7 +122,7 @@ This is pulled from the [HAL+JSON spec](http://stateless.co/hal_specification.ht
               { "name": "currency", "value": "USD" },
               { "name": "status", "value": "processing" }
             ],
-            "links": [
+            "transitions": [
               {
                 "rels":["ea:basket"],
                 "href":"/baskets/97213"

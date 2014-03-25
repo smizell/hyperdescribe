@@ -1,6 +1,6 @@
 # Hyperdescribe
 
-**Version**: 0.1.1
+**Version**: 0.2.0
 
 Hyperdescribe is a hypermedia message description format used to describe the different components of a hypermedia message. The goal is to provide a standardized way to describe a message in order to:
 
@@ -12,12 +12,14 @@ The point of this is to create servers and clients that describe and reference h
 
 ## Purpose
 
-The purpose of this format is to make hypermedia easier and to help increaes adoption. It is also trying to standardize the way we already think about hypermedia messages. When building a client or server that works with a hypermedia type, there are usually four main components:
+The purpose of this format is to make hypermedia easier and to help increase adoption. It is also trying to standardize the way we already think about hypermedia messages. When building a client or server that works with a hypermedia type, there are usually these main components:
 
 1. Entities - Anything that has identity (e.g. Person)
 2. Properites - Properties about that entity (e.g. Name)
 3. Links - Links to related entities
 4. Actions - Actions related to this entity
+5. Embedded Entities - Entities that are embedded withing a parent entity (e.g Person with embedded Address)
+6. Meta Data - Document- or entity-level data that falls outside of scope of the above
 
 **Hyperdescribe provides a way to describe how a particular message conveys these hypermedia components**.
 
@@ -312,7 +314,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/jordan/michael"
+        "url": "/players/jordan/michael",
         "context": {
           "typesOf": [ "schema:Player" ]
         },
@@ -339,7 +341,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/bird/larry"
+        "url": "/players/bird/larry",
         "context": {
           "typesOf": [ "schema:Player" ]
         },
@@ -360,7 +362,7 @@ The example below shows an HTML+RDFa representation and the Hyperdescribe docume
       {
         "classes": [ "player" ],
         "rels": [ "s:player" ],
-        "url": "/players/russell/bill"
+        "url": "/players/russell/bill",
         "context": {
           "typesOf": [ "schema:Player" ]
         },

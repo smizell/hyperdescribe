@@ -85,11 +85,9 @@ This is pulled from the [Siren spec](https://github.com/kevinswiber/siren).
           }
         }
       ],
-      "links": [
+      "transitions": [
         { "rels": [ "previous" ], "url": "http://api.x.io/orders/41" },
-        { "rels": [ "next" ], "url": "http://api.x.io/orders/43" }
-      ],
-      "actions": [
+        { "rels": [ "next" ], "url": "http://api.x.io/orders/43" },
         {
           "classes": [ "add-item" ],
           "label": "Add Item",

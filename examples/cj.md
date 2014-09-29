@@ -84,8 +84,8 @@ This is pulled from the [Collection+JSON documentation](http://amundsen.com/medi
     "content": {
       "entities": [
         {
-          "rels": ["item"]
-          "url": "http://example.org/friends/jdoe""
+          "rels": ["item"],
+          "url": "http://example.org/friends/jdoe",
           "properties": [
             { "name": "full-name", "value": "J. Doe", "label": "Full Name" },
             { "name": "email", "value": "jdoe@example.org", "label": "Email" }
